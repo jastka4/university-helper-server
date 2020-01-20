@@ -1,0 +1,1 @@
+Server for university helper mobile application
