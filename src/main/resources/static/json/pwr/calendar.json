@@ -1,0 +1,10 @@
+[
+  {
+    "operation": "shift",
+    "spec": {
+      "studentNumber": "index",
+      "startDate": "date.start",
+      "endDate": "date.end"
+    }
+  }
+]

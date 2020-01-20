@@ -16,6 +16,7 @@
 
     <properties>
         <java.version>13</java.version>
+        <jolt.version>0.1.1</jolt.version>
     </properties>
 
     <dependencies>
@@ -40,6 +41,17 @@
                     <artifactId>junit-vintage-engine</artifactId>
                 </exclusion>
             </exclusions>
+        </dependency>
+
+        <dependency>
+            <groupId>com.bazaarvoice.jolt</groupId>
+            <artifactId>jolt-core</artifactId>
+            <version>${jolt.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>com.bazaarvoice.jolt</groupId>
+            <artifactId>json-utils</artifactId>
+            <version>${jolt.version}</version>
         </dependency>
     </dependencies>
 
