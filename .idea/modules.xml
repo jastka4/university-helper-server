@@ -2,7 +2,9 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/university_helper_server.iml" filepath="$PROJECT_DIR$/university_helper_server.iml" />
+      <module fileurl="file://$PROJECT_DIR$/university-helper-server.iml" filepath="$PROJECT_DIR$/university-helper-server.iml" />
+      <module fileurl="file://$PROJECT_DIR$/university-helper-server-client/university-helper-server-client.iml" filepath="$PROJECT_DIR$/university-helper-server-client/university-helper-server-client.iml" />
+      <module fileurl="file://$PROJECT_DIR$/university-helper-server-config/university-helper-server-config.iml" filepath="$PROJECT_DIR$/university-helper-server-config/university-helper-server-config.iml" />
     </modules>
   </component>
 </project>
