@@ -8,9 +8,9 @@ import org.jastka4.universityhelperserver.client.common.Transformation;
 import org.jastka4.universityhelperserver.client.common.UnsupportedUniversityException;
 import org.jastka4.universityhelperserver.client.config.TransformationConfiguration;
 import org.jastka4.universityhelperserver.client.services.TransformationService;
+import org.json.JSONObject;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.springframework.cloud.context.config.annotation.RefreshScope;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
@@ -27,8 +27,8 @@ public class TransformationServiceImpl implements TransformationService {
     @Resource
     private TransformationConfiguration transformationConfiguration;
 
-    public String transformJson(final String jsonRequest, final Transformation transformation, final LoadType loadType, final String university) {
-        final Map<String, String> inputJSON = (Map<String, String>) JsonUtils.jsonToObject(jsonRequest);
+    public String transformJson(final JSONObject jsonRequest, final Transformation transformation, final LoadType loadType, final String university) {
+        final Map<String, String> inputJSON = (Map<String, String>) JsonUtils.jsonToObject(jsonRequest.toString());
 
         final List<Object> chainrSpecJSON;
         if (LoadType.REQUEST.equals(loadType)) {
@@ -42,9 +42,12 @@ public class TransformationServiceImpl implements TransformationService {
         return JsonUtils.toJsonString(transformedOutput);
     }
 
-    public String getUniversity(final String request) {
-        final Map<String, String> json = (Map<String, String>) JsonUtils.jsonToObject(request);
-        return json.get(UNIVERSITY);
+    public String getUniversity(final JSONObject request) {
+        return request.getString(UNIVERSITY);
+    }
+
+    public String putUniversity(final Map<String, String> request, final String university) {
+        return request.put(UNIVERSITY, university);
     }
 
     public Optional<Transformation> getTransformationForUniversity(final String university, final RequestType requestType) throws UnsupportedUniversityException {
@@ -60,13 +63,15 @@ public class TransformationServiceImpl implements TransformationService {
         if (type.equals(RequestType.CALENDARS)) {
             return transformationConfiguration.getCalendars();
         } else if (type.equals(RequestType.FINANCES)) {
-//            return transformationConfiguration.getFinances();
+            return transformationConfiguration.getFinances();
         } else if (type.equals(RequestType.GRADES)) {
-//            return transformationConfiguration.getGrades();
+            return transformationConfiguration.getGrades();
         } else if (type.equals(RequestType.MESSAGES)) {
-//            return transformationConfiguration.getMessages();
+            return transformationConfiguration.getMessages();
         } else if (type.equals(RequestType.PROFILES)) {
-//            return transformationConfiguration.getProfiles();
+            return transformationConfiguration.getProfiles();
+        } else if (type.equals(RequestType.LOGIN)) {
+            return transformationConfiguration.getLogin();
         }
 
         throw new UnsupportedUniversityException("Incorrect university type: " + type);

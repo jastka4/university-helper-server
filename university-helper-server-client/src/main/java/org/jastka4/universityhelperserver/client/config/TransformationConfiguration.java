@@ -13,7 +13,12 @@ import java.util.List;
 public class TransformationConfiguration {
 
     private List<Transformation> calendars;
+    private List<Transformation> finances;
     private List<Transformation> grades;
+    private List<Transformation> messages;
+    private List<Transformation> payments;
+    private List<Transformation> profiles;
+    private List<Transformation> login;
 
     public List<Transformation> getCalendars() {
         return calendars;
@@ -23,11 +28,51 @@ public class TransformationConfiguration {
         this.calendars = calendars;
     }
 
+    public List<Transformation> getFinances() {
+        return finances;
+    }
+
+    public void setFinances(List<Transformation> finances) {
+        this.finances = finances;
+    }
+
     public List<Transformation> getGrades() {
         return grades;
     }
 
     public void setGrades(List<Transformation> grades) {
         this.grades = grades;
+    }
+
+    public List<Transformation> getMessages() {
+        return messages;
+    }
+
+    public void setMessages(List<Transformation> messages) {
+        this.messages = messages;
+    }
+
+    public List<Transformation> getPayments() {
+        return payments;
+    }
+
+    public void setPayments(List<Transformation> payments) {
+        this.payments = payments;
+    }
+
+    public List<Transformation> getProfiles() {
+        return profiles;
+    }
+
+    public void setProfiles(List<Transformation> profiles) {
+        this.profiles = profiles;
+    }
+
+    public List<Transformation> getLogin() {
+        return login;
+    }
+
+    public void setLogin(List<Transformation> login) {
+        this.login = login;
     }
 }

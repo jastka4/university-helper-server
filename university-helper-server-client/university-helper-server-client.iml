@@ -99,6 +99,7 @@
     <orderEntry type="library" name="Maven: org.springframework.cloud:spring-cloud-config-client:2.2.1.RELEASE" level="project" />
     <orderEntry type="library" name="Maven: com.fasterxml.jackson.core:jackson-annotations:2.10.2" level="project" />
     <orderEntry type="library" name="Maven: com.fasterxml.jackson.core:jackson-databind:2.10.2" level="project" />
+    <orderEntry type="library" name="Maven: org.json:json:20190722" level="project" />
     <orderEntry type="library" name="Maven: com.bazaarvoice.jolt:jolt-core:0.1.1" level="project" />
     <orderEntry type="library" name="Maven: javax.inject:javax.inject:1" level="project" />
     <orderEntry type="library" name="Maven: com.bazaarvoice.jolt:json-utils:0.1.1" level="project" />

@@ -1,6 +1,7 @@
 package org.jastka4.universityhelperserver.client.services.impl;
 
 import org.jastka4.universityhelperserver.client.services.RequestService;
+import org.json.JSONObject;
 import org.springframework.stereotype.Service;
 
 import java.io.BufferedReader;
@@ -12,7 +13,7 @@ import java.nio.charset.StandardCharsets;
 
 @Service
 public class RequestServiceImpl implements RequestService {
-    public String sendPostRequest(final String requestUrl, final String payload) {
+    public JSONObject sendPostRequest(final String requestUrl, final String payload) {
         try {
             final URL url = new URL(requestUrl);
             final HttpURLConnection connection = (HttpURLConnection) url.openConnection();
@@ -34,7 +35,7 @@ public class RequestServiceImpl implements RequestService {
             }
             br.close();
             connection.disconnect();
-            return jsonString.toString();
+            return new JSONObject(jsonString.toString());
         } catch (Exception e) {
             throw new RuntimeException(e);
         }
