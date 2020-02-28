@@ -1,4 +1,4 @@
-package org.jastka4.university_helper_server;
+package org.jastka4.universityhelperserver.client;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
